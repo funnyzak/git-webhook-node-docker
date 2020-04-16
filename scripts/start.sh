@@ -1,4 +1,3 @@
-  
 #!/bin/ash
 
 mkdir -p -m 0700 /root/.ssh
