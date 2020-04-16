@@ -17,7 +17,7 @@ ENV LANG=C.UTF-8
 
 # Install needed modules
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh go rsync npm nodejs tzdata && \
+    apk add --no-cache bash git openssh go rsync npm yarn nodejs tzdata && \
     rm  -rf /tmp/* /var/cache/apk/*
 
 # Go config

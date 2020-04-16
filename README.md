@@ -5,7 +5,7 @@ Pull your nodejs project git code into a data volume and trigger node event via 
 [![Docker Stars](https://img.shields.io/docker/stars/funnyzak/git-webhook-node.svg?style=flat-square)](https://hub.docker.com/r/funnyzak/git-webhook-node/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/funnyzak/git-webhook-node.svg?style=flat-square)](https://hub.docker.com/r/funnyzak/git-webhook-node/)
 
-This image is based on Alpine Linux image, which is a 163MB image.
+This image is based on Alpine Linux image, which is a 166MB image.
 
 Download size of this image is:
 
