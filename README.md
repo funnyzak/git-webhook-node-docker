@@ -35,7 +35,7 @@ Webhook Url: [http://hostname:9000/hooks/git-webhook](#)
 
 ---
   
-## Available Configuration Parameters
+## Available Parameters
 
 The following flags are a list of all the currently supported options that can be changed by passing in the variables to docker with the -e flag.
 
@@ -50,7 +50,7 @@ The following flags are a list of all the currently supported options that can b
 
 ---
 
-## Volume Configuration
+## Volume
 
 * **/app/code** : git source code dir.
 * **/root/.ssh** :  If it is a private repository, please set ssh key
