@@ -66,9 +66,9 @@ services:
       - GIT_BRANCH=master
       - GIT_EMAIL=youremail
       - GIT_NAME=yourname
-      - STARTUP_COMMANDS=echo \"STARTUP_COMMANDS helllo\"
-      - AFTER_PULL_COMMANDS=echo \"AFTER_PULL_COMMANDS hello\"
-      - BEFORE_PULL_COMMANDS=echo \"AFTER_PULL_COMMANDS hello\"
+      - STARTUP_COMMANDS=echo "STARTUP_COMMANDS helllo"
+      - AFTER_PULL_COMMANDS=echo "AFTER_PULL_COMMANDS hello"
+      - BEFORE_PULL_COMMANDS=echo "AFTER_PULL_COMMANDS hello"
     restart: on-failure
     ports:
       - 1001:9000
