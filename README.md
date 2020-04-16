@@ -54,9 +54,9 @@ The following flags are a list of all the currently supported options that can b
 
 * **/app/code** : git source code dir.
 * **/root/.ssh** :  If it is a private repository, please set ssh key
-* **/custom_scripts/on_startup** :  The folder in which the scripts are executed at startup, traversing all the scripts and executing them sequentially
-* **/custom_scripts/before_pull** :  The folder in which the scripts are executed at before pull, traversing all the scripts and executing them sequentially
-* **/custom_scripts/after_pull** :  The folder in which the scripts are executed at after pull, traversing all the scripts and executing them sequentially
+* **/custom_scripts/on_startup** :  which the scripts are executed at startup, traversing all the scripts and executing them sequentially
+* **/custom_scripts/before_pull** :  which the scripts are executed at before pull
+* **/custom_scripts/after_pull** :  which the scripts are executed at after pull
 
 ### ssh-keygen
 
