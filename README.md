@@ -39,19 +39,24 @@ Webhook Url: [http://hostname:9000/hooks/git-webhook](#)
 
 The following flags are a list of all the currently supported options that can be changed by passing in the variables to docker with the -e flag.
 
-- **USE_HOOK** : The web hook is enabled as long as this is present.
-- **GIT_REPO** : URL to the repository containing your source code
-- **GIT_BRANCH** : Select a specific branch (optional)
-- **GIT_EMAIL** : Set your email for code pushing (required for git to work)
-- **GIT_NAME** : Set your name for code pushing (required for git to work)
-- **STARTUP_COMMANDS** : Add any commands that will be run at the end of the start.sh script
-- **AFTER_PULL_COMMANDS** : Add any commands that will be run after pull
-- **BEFORE_PULL_COMMANDS** : Add any commands that will be run before pull
+* **USE_HOOK** : The web hook is enabled as long as this is present.
+* **GIT_REPO** : URL to the repository containing your source code
+* **GIT_BRANCH** : Select a specific branch (optional)
+* **GIT_EMAIL** : Set your email for code pushing (required for git to work)
+* **GIT_NAME** : Set your name for code pushing (required for git to work)
+* **STARTUP_COMMANDS** : Add any commands that will be run at the end of the start.sh script
+* **AFTER_PULL_COMMANDS** : Add any commands that will be run after pull
+* **BEFORE_PULL_COMMANDS** : Add any commands that will be run before pull
+
+---
 
 ## Volume Configuration
 
-- **/app/code** : git source code dir.
-- **/root/.ssh** :  If it is a private repository, please set ssh key
+* **/app/code** : git source code dir.
+* **/root/.ssh** :  If it is a private repository, please set ssh key
+* **/custom_scripts/on_startup** :  The folder in which the scripts are executed at startup, traversing all the scripts and executing them sequentially
+* **/custom_scripts/before_pull** :  The folder in which the scripts are executed at before pull, traversing all the scripts and executing them sequentially
+* **/custom_scripts/after_pull** :  The folder in which the scripts are executed at after pull, traversing all the scripts and executing them sequentially
 
 ### ssh-keygen
 
