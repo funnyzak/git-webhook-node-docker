@@ -31,6 +31,7 @@ Webhook Url: [http://hostname:9000/hooks/git-webhook](#)
 * wget
 * rsync
 * git
+* curl
 * bash
 
 ---
