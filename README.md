@@ -34,10 +34,10 @@ The following flags are a list of all the currently supported options that can b
 
 ## Volume Configuration
 
- - **/app/code** : vuepress output dir.
- - **/root/.ssh** :  If it is a private repository, please set ssh key
+- **/app/code** : git source code dir.
+- **/root/.ssh** :  If it is a private repository, please set ssh key
 
-#### ssh-keygen
+### ssh-keygen
 
 `ssh-keygen -t rsa -b 4096 -C "youremail@gmail.com" -N "" -f ./id_rsa`
 
