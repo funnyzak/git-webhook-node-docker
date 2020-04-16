@@ -17,7 +17,7 @@ ENV LANG=C.UTF-8
 
 # Install needed modules
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh go rsync npm nodejs supervisor && \
+    apk add --no-cache bash git openssh go rsync npm nodejs && \
     rm  -rf /tmp/* /var/cache/apk/*
 
 # Go config
@@ -30,9 +30,6 @@ RUN go get github.com/adnanh/webhook
 
 # Create Dir
 RUN mkdir -p /app/hook && mkdir -p /app/code
-
-# Copy supervisor config
-COPY conf/supervisord.conf /etc/supervisord.conf
 
 # Copy webhook config
 COPY conf/hooks.json /app/hook/hooks.json

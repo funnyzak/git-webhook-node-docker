@@ -42,7 +42,6 @@ if [ ! -d "/app/code/.git" ];then
 fi
 
 chmod +x -R /custom_scripts
-chmod +x -R /app/code
 
 # Run any commands passed by env
 eval "$STARTUP_COMMANDS"
@@ -50,5 +49,10 @@ eval "$STARTUP_COMMANDS"
 # Custom scripts
 source /usr/bin/run_scripts_on_startup.sh
 
-# Start supervisord to start app and services
-/usr/bin/supervisord -n -c /etc/supervisord.conf
+if [ -n "$USE_HOOK" ]; then
+    echo "start hook..."
+    /go/bin/webhook -hooks /app/hook/hooks.json -verbose
+else
+    sh /app/hook/hook.sh
+    while sleep 23h; do sh /app/hook/hook.sh; done
+fi
