@@ -17,11 +17,16 @@ ENV LANG=C.UTF-8
 
 # Install needed modules
 RUN apk update && apk upgrade && \
-    apk add --no-cache bash git openssh go rsync tzdata zip unzip tar wget curl
+    apk add --no-cache bash git openssh go rsync tzdata zip unzip tar wget curl nodejs yarn npm
 
-# nodejs yarn npm
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.10/main/ nodejs=10.19.0-r0
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.10/main/ npm=10.19.0-r0
+# Install Node module 
+RUN apk add --no-cache --virtual .gyp \
+        python \
+        make \
+        g++ \
+    && npm install \
+        node-sass \
+    && apk del .gyp
 
 # rm apk cache
 RUN rm  -rf /tmp/* /var/cache/apk/*
