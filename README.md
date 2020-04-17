@@ -96,7 +96,7 @@ services:
       - 1001:9000
     volumes:
       - ./custom_scripts:/custom_scripts
-      - ./code:/app/code # source code dir. Will automatically pull the code.
-      - ./ssh:/root/.ssh # If it is a private repository, please set ssh key
+      - ./code:/app/code
+      - ./ssh:/root/.ssh
 
  ```
