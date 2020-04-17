@@ -48,10 +48,12 @@ eval "$STARTUP_COMMANDS"
 # Custom scripts
 source /usr/bin/run_scripts_on_startup.sh
 
+# run hook
+source /app/hook/hook.sh
+
 if [ -n "$USE_HOOK" ]; then
     echo "start hook..."
     /go/bin/webhook -hooks /app/hook/hooks.json -verbose
 else
-    sh /app/hook/hook.sh
     while sleep 23h; do sh /app/hook/hook.sh; done
 fi
