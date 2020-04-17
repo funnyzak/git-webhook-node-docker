@@ -17,16 +17,8 @@ ENV LANG=C.UTF-8
 
 # Install needed modules
 RUN apk update && apk upgrade && \
+    apk add --no-cache g++ make python && \
     apk add --no-cache bash git openssh go rsync tzdata zip unzip tar wget curl nodejs yarn npm
-
-# Install Node module 
-RUN apk add --no-cache --virtual .gyp \
-        python \
-        make \
-        g++ \
-    && npm install \
-        node-sass \
-    && apk del .gyp
 
 # rm apk cache
 RUN rm  -rf /tmp/* /var/cache/apk/*
