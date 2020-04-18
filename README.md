@@ -53,7 +53,7 @@ The following flags are a list of all the currently supported options that can b
 
 ## Volume
 
-* **/app/code** : git source code dir.
+* **/app/code** : git source code dir. docker work dir.
 * **/root/.ssh** :  If it is a private repository, please set ssh key
 * **/custom_scripts/on_startup** :  which the scripts are executed at startup, traversing all the scripts and executing them sequentially
 * **/custom_scripts/before_pull** :  which the scripts are executed at before pull
