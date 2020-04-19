@@ -15,7 +15,7 @@ Download size of this image is:
 
 Docker Pull Command: `docker pull funnyzak/git-webhook-node`
 
-Webhook Url: [http://hostname:9000/hooks/git-webhook](#)
+Webhook Url: [http://hostname:9000/hooks/git-webhook?token=HOOK_TOKEN](#)
 
 ---
 
@@ -41,6 +41,7 @@ Webhook Url: [http://hostname:9000/hooks/git-webhook](#)
 The following flags are a list of all the currently supported options that can be changed by passing in the variables to docker with the -e flag.
 
 * **USE_HOOK** : The web hook is enabled as long as this is present.
+* **HOOK_TOKEN** : Custom hook security tokens, strings.
 * **GIT_REPO** : URL to the repository containing your source code
 * **GIT_BRANCH** : Select a branch for clone and auto hook.
 * **GIT_EMAIL** : Set your email for code pushing (required for git to work)
