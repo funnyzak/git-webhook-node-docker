@@ -43,8 +43,10 @@ fi
 chmod +x -R /custom_scripts
 
 # Run any commands passed by env
-echo "on startup command do..." 
-eval "$STARTUP_COMMANDS"
+if [ -n "$STARTUP_COMMANDS" ]; then
+  echo "on startup command do..." 
+  eval "$STARTUP_COMMANDS"
+fi
 
 echo "on startup shell do..." 
 # Custom scripts
@@ -61,8 +63,8 @@ echo $HOOK_CONF >/app/hook/githooks.json
 echo "hook branch> ${GIT_BRANCH}. hook token: ${HOOK_TOKEN}"
 
 if [ -n "$USE_HOOK" ]; then
-    echo "start hook..."
-    /go/bin/webhook -hooks /app/hook/githooks.json -verbose
+  echo "start hook..."
+  /go/bin/webhook -hooks /app/hook/githooks.json -verbose
 else
-    while sleep 23h; do sh /app/hook/hook.sh; done
+  while sleep 23h; do sh /app/hook/hook.sh; done
 fi
