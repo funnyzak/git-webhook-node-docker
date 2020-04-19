@@ -52,11 +52,11 @@ echo "on startup shell do..."
 # Custom scripts
 source /usr/bin/run_scripts_on_startup.sh
 
-# change hook match setting
-HOOK_CONF=$(cat /app/hook/hooks.json | sed -e "s/\${branch}/${GIT_BRANCH}/" | sed -e "s/\${token}/${HOOK_TOKEN}/")
-
 # run hook
 source /app/hook/hook.sh &
+
+# change hook match setting
+HOOK_CONF=$(cat /app/hook/hooks.json | sed -e "s/\${branch}/${GIT_BRANCH}/" | sed -e "s/\${token}/${HOOK_TOKEN}/")
 
 echo $HOOK_CONF >/app/hook/githooks.json
 
