@@ -51,9 +51,13 @@ source /usr/bin/run_scripts_on_startup.sh
 # run hook
 source /app/hook/hook.sh
 
+# change hook match branch
+HOOK_CONF=$(cat /app/hook/hooks.json | sed -e "s/\${branch}/${GIT_BRANCH}/")
+echo $HOOK_CONF >/app/hook/githooks.json
+
 if [ -n "$USE_HOOK" ]; then
     echo "start hook..."
-    /go/bin/webhook -hooks /app/hook/hooks.json -verbose
+    /go/bin/webhook -hooks /app/hook/githooks.json -verbose
 else
     while sleep 23h; do sh /app/hook/hook.sh; done
 fi
