@@ -15,9 +15,10 @@ LABEL org.label-schema.vendor="potato<silenceace@gmail.com>" \
 
 ENV LANG=C.UTF-8
 
-# Install needed modules
 RUN apk update && apk upgrade && \
+    # Install python/make/gcc for gyp compilation.
     apk add --no-cache g++ make python && \
+    # # Install needed modules
     apk add --no-cache bash git openssh go rsync tzdata zip unzip tar wget curl nodejs yarn npm
 
 # rm apk cache
