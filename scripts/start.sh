@@ -43,8 +43,10 @@ fi
 chmod +x -R /custom_scripts
 
 # Run any commands passed by env
+echo "on startup command do..." 
 eval "$STARTUP_COMMANDS"
 
+echo "on startup shell do..." 
 # Custom scripts
 source /usr/bin/run_scripts_on_startup.sh
 
@@ -52,9 +54,11 @@ source /usr/bin/run_scripts_on_startup.sh
 source /app/hook/hook.sh
 
 # change hook match setting
-HOOK_CONF=$(cat /app/hook/hooks.json | sed -e "s/\${branch}/${GIT_BRANCH}/") | sed -e "s/\${token}/${HOOK_TOKEN}/")
+HOOK_CONF=$(cat /app/hook/hooks.json | sed -e "s/\${branch}/${GIT_BRANCH}/" | sed -e "s/\${token}/${HOOK_TOKEN}/")
 
 echo $HOOK_CONF >/app/hook/githooks.json
+
+echo "hook branch> ${GIT_BRANCH}. hook token: ${HOOK_TOKEN}"
 
 if [ -n "$USE_HOOK" ]; then
     echo "start hook..."

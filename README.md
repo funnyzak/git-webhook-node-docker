@@ -85,6 +85,7 @@ services:
       - TZ=Asia/Shanghai
       - LANG=C.UTF-8
       - USE_HOOK=1
+      - HOOK_TOKEN=hello
       - GIT_REPO=https://github.com/vuejs/vuepress.git
       - GIT_BRANCH=master
       - GIT_EMAIL=youremail
