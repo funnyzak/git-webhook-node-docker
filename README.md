@@ -42,14 +42,13 @@ The following flags are a list of all the currently supported options that can b
 
 * **USE_HOOK** : The web hook is enabled as long as this is present.
 * **HOOK_TOKEN** : Custom hook security tokens, strings.
-* **GIT_REPO** : URL to the repository containing your source code
+* **GIT_REPO** : url to the repository containing your source code.
 * **GIT_BRANCH** : Select a branch for clone and auto hook match.
-* **GIT_EMAIL** : Set your email for code pushing (required for git to work)
-* **GIT_NAME** : Set your name for code pushing (required for git to work)
-* **STARTUP_COMMANDS** : Add any commands that will be run at the end of the start.sh script
-* **AFTER_PULL_COMMANDS** : Add any commands that will be run after pull
-* **BEFORE_PULL_COMMANDS** : Add any commands that will be run before pull
-
+* **GIT_EMAIL** : Set your email for git (required for git to work)
+* **GIT_NAME** : Set your name for git (required for git to work)
+* **STARTUP_COMMANDS** : Optional. Add any commands that will be run at the end of the start.sh script. left blank, will not execute.
+* **AFTER_PULL_COMMANDS** : Optional. Add any commands that will be run after pull. left blank, will not execute.
+* **BEFORE_PULL_COMMANDS** : Optional. Add any commands that will be run before pull. left blank, will not execute.
 ---
 
 ## Volume
