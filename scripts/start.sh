@@ -48,6 +48,7 @@ if [ -n "$STARTUP_COMMANDS" ]; then
   eval "$STARTUP_COMMANDS"
 fi
 
+
 echo "on startup shell do..." 
 # Custom scripts
 source /usr/bin/run_scripts_on_startup.sh
