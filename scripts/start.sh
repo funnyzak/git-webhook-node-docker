@@ -44,7 +44,7 @@ chmod +x -R /custom_scripts
 
 # Run any commands passed by env
 if [ -n "$STARTUP_COMMANDS" ]; then
-  echo "on startup command do..." 
+  echo "on startup command do: ${STARTUP_COMMANDS}" 
   eval "$STARTUP_COMMANDS"
 fi
 
