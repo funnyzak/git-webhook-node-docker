@@ -19,10 +19,9 @@ RUN apk update && apk upgrade && \
     # Install python/make/gcc for gyp compilation.
     apk add --no-cache g++ make python && \
     # # Install needed modules
-    apk add --no-cache bash git openssh go rsync tzdata zip unzip tar wget curl nodejs yarn npm
-
-# rm apk cache
-RUN rm  -rf /tmp/* /var/cache/apk/*
+    apk add --no-cache bash git openssh go rsync tzdata zip unzip && \
+    apk add --no-cache tar wget curl nodejs yarn npm && \
+    rm  -rf /tmp/* /var/cache/apk/*
 
 # Go config
 RUN mkdir -p /go/src /go/bin && chmod -R 777 /go
