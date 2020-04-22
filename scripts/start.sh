@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p -m 0700 /root/.ssh
+mkdir -p -m 0600 /root/.ssh
 mkdir -p -m 0700 /app/code
 
 # Disable Strict Host checking for non interactive git clones
@@ -8,7 +8,7 @@ rm -f /root/.ssh/config
 echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
 # SSH key
-chmod 600 /root/.ssh/id_rsa
+chmod 0600 /root/.ssh/id_rsa
 
 # Setup git variables
 if [ ! -z "$GIT_EMAIL" ]; then
